@@ -1,16 +1,9 @@
 package ru.parsentev.task_005;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import ru.parsentev.task_002.Point;
 import ru.parsentev.task_003.Triangle;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
-import static java.lang.Math.abs;
-import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;
 import static org.slf4j.LoggerFactory.getLogger;
 
 /**
@@ -28,6 +21,10 @@ public class RightTriangle extends Triangle {
 
     @Override
     public boolean exists() {
-        return super.exists();
+        double ab = first.distanceTo(second);
+        double bc = second.distanceTo(third);
+        double ca = third.distanceTo(first);
+
+        return (ab == bc && bc == ca && ca == ab && ab != 0);
     }
 }
