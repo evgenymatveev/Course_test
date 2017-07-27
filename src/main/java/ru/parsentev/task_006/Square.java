@@ -1,8 +1,8 @@
 package ru.parsentev.task_006;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import ru.parsentev.task_002.Point;
+import ru.parsentev.task_004.IsoscelesTriangle;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -28,6 +28,13 @@ public class Square {
     }
 
     public boolean exists() {
-        throw new UnsupportedOperationException();
+        double a = first.distanceTo(second);
+        double b = second.distanceTo(third);
+        double c = third.distanceTo(fourth);
+        double d = fourth.distanceTo(first);
+        IsoscelesTriangle tr1 = new IsoscelesTriangle(first, second, third);
+        IsoscelesTriangle tr2 = new IsoscelesTriangle(first, third, fourth);
+
+        return a == b && b == c && c == a && tr1.exists() && tr2.exists();
     }
 }
