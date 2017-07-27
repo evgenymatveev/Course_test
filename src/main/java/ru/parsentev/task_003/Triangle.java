@@ -1,7 +1,6 @@
 package ru.parsentev.task_003;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import ru.parsentev.task_002.Point;
 
 import static org.slf4j.LoggerFactory.getLogger;
@@ -26,10 +25,24 @@ public class Triangle {
     }
 
     public boolean exists() {
-        throw new UnsupportedOperationException();
+        double ab = first.distanceTo(second);
+        double bc = second.distanceTo(third);
+        double ca = third.distanceTo(first);
+        return ab + bc > ca && bc + ca > ab && ab + ca > bc;
     }
 
     public double area() {
-        throw new UnsupportedOperationException();
+        double ab = first.distanceTo(second);
+        double bc = second.distanceTo(third);
+        double ca = third.distanceTo(first);
+
+        double d = (ab + bc + ca)/2;
+        double s = Math.sqrt(d*(d-ab)*(d-bc)*(d-ca));
+
+        if (s > 0) {
+            return Math.round(s);
+        } else {
+            throw new IllegalStateException();
+        }
     }
 }
