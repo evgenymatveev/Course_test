@@ -14,6 +14,22 @@ public class UniqueChars {
     }
 
     public int unique() {
-        throw new UnsupportedOperationException();
+        char[] ch = line.toCharArray();
+        int result = ch.length;
+        for (int i = 0; i < ch.length; i++) {
+            for (int j = 0; j < ch.length; j++) {
+                if(i != j && ch[i] == ch[j]) {
+                    result--;
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        UniqueChars unique = new UniqueChars("2+2");
+        System.out.println(unique.unique());
     }
 }
+
