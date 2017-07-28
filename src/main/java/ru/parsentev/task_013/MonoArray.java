@@ -1,7 +1,6 @@
 package ru.parsentev.task_013;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -21,6 +20,12 @@ public class MonoArray {
     }
 
     public boolean exists() {
-        throw new UnsupportedOperationException();
+        for (int i = 1; i < values.length; i++) {
+            int tmp = values[0];
+            if (values[i] != tmp) {
+                return false;
+            }
+        }
+        return true;
     }
 }
