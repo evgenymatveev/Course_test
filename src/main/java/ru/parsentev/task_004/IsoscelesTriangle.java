@@ -25,8 +25,8 @@ public class IsoscelesTriangle extends Triangle {
         double bc = second.distanceTo(third);
         double ca = third.distanceTo(first);
 
-        return ((ab == bc && ab != ca && bc != ca)
+        return (ab + bc > ca && bc + ca > ab && ab + ca > bc && ((ab == bc && ab != ca && bc != ca)
                 || (bc == ca && bc != ab && ca != ab)
-                || (ca == ab && ca != bc && ab != bc) && ab != 0 && bc != 0 && ca != 0);
+                || (ca == ab && ca != bc && ab != bc)));
     }
 }
