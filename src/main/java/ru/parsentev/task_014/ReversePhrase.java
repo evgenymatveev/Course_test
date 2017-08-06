@@ -1,7 +1,6 @@
 package ru.parsentev.task_014;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
@@ -20,6 +19,23 @@ public class ReversePhrase {
     }
 
     public String reverse() {
-        throw new UnsupportedOperationException();
+        StringBuilder sb = new StringBuilder();
+        String[] str = line.split(" ");
+        for (int i = 0; i < str.length / 2; i++) {
+            for (int j = str.length - 1; j > str.length / 2 ; j--) {
+                String tmp = str[i];
+                str[i] = str[j];
+                str[j] = tmp;
+            }
+        }
+        for (int i = 0; i < str.length; i++) {
+            sb = sb.append(str[i]);
+            if(i != str.length - 1) {
+                sb = sb.append(" ");
+            }
+        }
+        return sb.toString();
     }
 }
+
+

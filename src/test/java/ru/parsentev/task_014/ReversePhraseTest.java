@@ -1,9 +1,9 @@
 package ru.parsentev.task_014;
 
-import org.junit.Ignore;
 import org.junit.Test;
+
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 /**
  * TODO: comment
@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  * @author parsentev
  * @since 28.07.2016
  */
-@Ignore
+
 public class ReversePhraseTest {
     @Test
     public void oneWords() {
