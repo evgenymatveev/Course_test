@@ -19,7 +19,7 @@ public class RightTriangleTest {
         Point second = new Point(0, 2);
         Point third = new Point(2, 0);
         boolean result = new RightTriangle(first, second, third).exists();
-        assertThat(result, is(true));
+        assertThat(result, is(false));
     }
 
     @Test
