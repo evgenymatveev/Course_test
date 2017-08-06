@@ -22,9 +22,12 @@ public class CycleShift {
     public int[] shift(int position) {
         for (int j = 0; j < position; j++) {
             int end = values[values.length - 1];
-            System.arraycopy(values, 0, values, 1, values.length - 2 + 1);
+            for (int i = values.length - 1; i > 0; i--) {
+                values[i] = values[i - 1];
+            }
             values[0] = end;
         }
         return values;
     }
 }
+
